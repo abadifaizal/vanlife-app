@@ -11,6 +11,7 @@ function VanDetail() {
     .then(data => {
       setVans(data.vans);
     })
+    .catch(error => console.error(error))
   }, [params.id])
 
   return (
