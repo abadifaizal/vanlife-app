@@ -21,7 +21,12 @@ function VanDetail() {
   console.log(type)
   return (
     <div className='van-detail-container'>
-      <Link to={`..${search}`} relative='path' className='back-button'>&larr; Back to {`${type.slice(0, 1).toUpperCase() + type.slice(1)}`}</Link>
+      <Link 
+        to={`..${search}`}
+        relative='path'
+        className='back-button'>
+          &larr; Back to {`${type.slice(0, 1).toUpperCase() + type.slice(1)}`}
+      </Link>
       {van ? (
         <div className='van-detail'>
           <img src={van.imageUrl} />
