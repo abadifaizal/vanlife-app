@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { loginUser } from '../api';
 
 export default function Login() {
@@ -7,14 +7,16 @@ export default function Login() {
   const location = useLocation();
   const [status, setStatus] = React.useState('idle');
   const [loginError, setLoginError] = React.useState(null);
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
     setStatus('submitting');
+    setLoginError(null);
     loginUser(loginFormData)
       .then(data => {
-        console.log(data);
-        setLoginError(null);
+        localStorage.setItem('loggedin', true);
+        navigate("/host", { replace: true })
       })
       .catch(error => {
         console.error(error.message);
