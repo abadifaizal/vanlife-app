@@ -18,14 +18,19 @@ import HostVanPhotos from './pages/Host/HostVanPhotos';
 import NotFound from './components/NotFound';
 import "./server";
 import Error from './components/Error';
-import Login from './pages/Login';
+import Login , { loginAction } from './pages/Login';
 import AuthRequired from './components/AuthRequired';
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Layout/>}>
     <Route index element={<Home />} />
     <Route path="about" element={<About />} />
-    <Route path="login" element={<Login />} />
+    <Route 
+      path="login" 
+      element={<Login />} 
+      action={loginAction} 
+      // errorElement={<h1>There was an Error!</h1>}
+    />
     <Route path="vans" element={<Vans />} loader={vansLoader} errorElement={<Error/>} />
     <Route path="vans/:id" element={<VanDetail />} />
 
