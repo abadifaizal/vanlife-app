@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 import { Link, useSearchParams, useLoaderData, defer, Await } from "react-router-dom";
-import { getVans } from "../../api";
+// import { getVans } from "../../api";
+import { getAllVans } from "../../api/firebase";
 
 export async function loader() {
-	return defer({ vans: getVans() });
+	return defer({ vans: getAllVans() });
 }
 
 export default function Vans() {

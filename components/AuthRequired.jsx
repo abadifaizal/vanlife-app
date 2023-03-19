@@ -6,17 +6,5 @@ export default function AuthRequired() {
   // Save location of next url
   const location = useLocation();
 
-  if(!isLoggedIn) {
-    return (
-      <Navigate 
-        to="login"
-        state={{ 
-          from: location.pathname,
-          message: "You must log in first"
-        }}
-        replace
-      />
-    )
-  }
   return <Outlet/>
 }
