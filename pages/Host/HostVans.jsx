@@ -19,6 +19,7 @@ export default function HostVans() {
   // }, [])
 
   const dataPromise = useLoaderData();
+
   function renderHostVansElements(hostVans) {
     const hostVansEls = hostVans.map(({id, imageUrl, name, price}) => (
       <Link to={id} key={id} className="host-van-link-wrapper">
@@ -34,11 +35,12 @@ export default function HostVans() {
 
     return (
       <div className='host-vans-list'>
-        {hostVans.length > 0 && hostVansEls}
+        <section>
+          {hostVansEls}
+        </section>
       </div>
     )
   }
-
 
   return (
     <section>

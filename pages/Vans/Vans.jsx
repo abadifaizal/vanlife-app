@@ -9,6 +9,7 @@ export async function loader() {
 export default function Vans() {
 	// const [vans, setVans] = React.useState(data);
 	// const [loading, setLoading] = useState(false);
+	// const [error, setError] = useState(null);
 
 	// React.useEffect(() => {
 	// 	async function loadVans() {
@@ -35,17 +36,17 @@ export default function Vans() {
   //   }
   //   return `?${sp.toString()}`
   // }
-  
-  
 
 	// if(loading) {
 	// 	return <h1>Loading...</h1>
 	// }
 
-	const [searchParams, setSearchParams] = useSearchParams();
-	const [error, setError] = useState(null);
-	const dataPromise = useLoaderData();
+	// if(error) {
+	// 	return <h1>There was and {error.message}</h1>
+	// }
 
+	const [searchParams, setSearchParams] = useSearchParams();
+	const dataPromise = useLoaderData();
 	const typeFilter = searchParams.get("type");
 
 	function handleFilterChange(key, value) {
@@ -58,10 +59,6 @@ export default function Vans() {
       return prevParams
     })
   }
-
-	if(error) {
-		return <h1>There was and {error.message}</h1>
-	}
 
 	function renderVanElements(vans) {
 		const displayedVans = typeFilter ? vans.filter(van => van.type.toLowerCase() === typeFilter) : vans;
