@@ -19,8 +19,8 @@ export default function Header() {
         <NavLink to="host" className={({isActive}) => isActive ? activeStyle : null}>Host</NavLink>
         <NavLink to="about" className={({isActive}) => isActive ? activeStyle : null}>About</NavLink>
         <NavLink to="vans" className={({isActive}) => isActive ? activeStyle : null}>Vans</NavLink>
-        <NavLink to="login" className="login-link"><img src="/assets/images/avatar-icon.png" alt="login icon" className='login-icon' /></NavLink>
-        <button onClick={fakeLogOut}>X</button>
+        {/* <NavLink to="login" className="login-link"><img src="/assets/images/avatar-icon.png" alt="login icon" className='login-icon' /></NavLink>
+        <button onClick={fakeLogOut}>X</button> */}
       </nav>
     </header>
   )

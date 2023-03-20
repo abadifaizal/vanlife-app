@@ -72,6 +72,9 @@ nav {
 }
 
 main {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
 	margin-bottom: 84px;
 }
 
@@ -297,9 +300,6 @@ i[class*="van-type-"] {
 .van-detail-container .back-button {
 	color: black;
 	text-decoration: none;
-}
-
-.van-detail-container .back-button:visited {
 }
 
 .van-detail-container .back-button span {
