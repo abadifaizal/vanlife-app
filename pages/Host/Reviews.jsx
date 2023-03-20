@@ -24,7 +24,7 @@ export default function Reviews() {
         <h2>Your reviews</h2>
         <p>Last <span>30 days</span></p>
       </div>
-      <img className='graph' src="/assets/images/reviews-graph.png" alt="Review Graph" />
+      <img className='graph' src="../../assets/images/reviews-graph.png" alt="Review Graph" />
       <h3>Review (2)</h3>
       {reviewsData.map((review) => (
         <div key={review.id}>
