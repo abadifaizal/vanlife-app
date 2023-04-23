@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import IncomeGraph from '../../assets/images/income-graph.png';
 
 export default function Income() {
   const transactionData = [
@@ -11,7 +12,7 @@ export default function Income() {
       <h1>Income</h1>
       <p>Last <span>30 days</span></p>
       <h2>$2.260</h2>
-      <img className='graph' src="../../assets/images/income-graph.png" alt="Income Graph" />
+      <img className='graph' src={IncomeGraph} alt="Income Graph" />
       <div className='info-header'>
         <h3>Your transactions (3)</h3>
         <p>Last <span>30 days</span></p>
